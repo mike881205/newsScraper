@@ -29,9 +29,10 @@ $(document).on("click", "p", function () {
   })
     .then(function (data) {
       $("#comments").append("<h3>" + data.title + "</h3>");
-      $("#comments").append("<input id='titleinput' name='title' >");
-      $("#comments").append("<textarea id='bodyinput' name='body'></textarea>");
+      $("#comments").append("<input id='titleinput' name='title' placeholder='Comment Title'>");
+      $("#comments").append("<textarea id='bodyinput' name='body placeholder='Comment Body'></textarea> ");
       $("#comments").append("<button data-id='" + data._id + "' id='savecomment'>Save comment</button>");
+      $("#comments").append("<button id='nevermind'>Nevermind</button>");
 
       if (data.comment) {
         $("#titleinput").val(data.comment.title);
@@ -59,3 +60,10 @@ $(document).on("click", "#savecomment", function () {
   $("#titleinput").val("");
   $("#bodyinput").val("");
 });
+
+$(document).on("click", "#nevermind", function () {
+  $("#h3").show();
+  $("#titleinput").val("");
+  $("#bodyinput").val("");
+  $("#comments").empty();
+})

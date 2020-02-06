@@ -22,7 +22,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
 
-mongoose.connect("mongodb://localhost/test8", { useNewUrlParser: true });
+mongoose.connect("mongodb://localhost/test10", { useNewUrlParser: true });
 
 // Routes
 
