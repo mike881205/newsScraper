@@ -6,11 +6,11 @@ const axios = require("axios");
 const cheerio = require("cheerio");
 const db = require("./models");
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/test10";
 
-mongoose.connect(MONGODB_URI);
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 
 const app = express();
 
