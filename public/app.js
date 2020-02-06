@@ -1,5 +1,9 @@
+$(".main").hide();
+
 
 $(document).on("click", "#scrape", function () {
+  $(".main").show();
+
   $.ajax({
     method: "GET",
     url: "/scrape"
@@ -38,6 +42,7 @@ $(document).on("click", "p", function () {
 
 $(document).on("click", "#savecomment", function () {
   let thisId = $(this).attr("data-id");
+  $("#h3").show();
 
   $.ajax({
     method: "POST",
