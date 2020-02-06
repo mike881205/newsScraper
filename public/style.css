@@ -12,11 +12,10 @@ body {
 #articles {
   display: inline-block;
   overflow: auto;
-  /* width: 60%; */
   height: 500px;
   margin: 1%;
 }
-#notes {
+#comments {
   float: right;
   width: 85%;
   margin: 1%;
@@ -25,7 +24,7 @@ body {
 textarea, input {
   display: block;
   width: 100%;
-  background-color: #FCF5C7;
+  background-color: white;
 }
 input {
   height: 36px;
