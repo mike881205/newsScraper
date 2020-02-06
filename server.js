@@ -8,7 +8,7 @@ const db = require("./models");
 
 const PORT = 3000;
 
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/test10";
 
 mongoose.connect(MONGODB_URI);
 
@@ -22,7 +22,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
 
-mongoose.connect("mongodb://localhost/test10", { useNewUrlParser: true });
+// mongoose.connect("mongodb://localhost/test10", { useNewUrlParser: true });
 
 // Routes
 
@@ -32,8 +32,6 @@ app.get("/", function (req, res) {
 
 app.get("/scrape", function (req, res) {
   axios.get("https://www.starwars.com/news").then(function (response) {
-
-    console.log(response)
 
     let $ = cheerio.load(response.data);
 
