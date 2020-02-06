@@ -11,6 +11,7 @@ $.getJSON("/articles", function(data) {
 // Whenever someone clicks a p tag
 $(document).on("click", "p", function() {
   // Empty the notes from the note section
+  $("#h3").hide();
   $("#notes").empty();
   // Save the id from the p tag
   var thisId = $(this).attr("data-id");
@@ -24,7 +25,7 @@ $(document).on("click", "p", function() {
     .then(function(data) {
       console.log(data);
       // The title of the article
-      $("#notes").append("<h2>" + data.title + "</h2>");
+      $("#notes").append("<h3>" + data.title + "</h3>");
       // An input to enter a new title
       $("#notes").append("<input id='titleinput' name='title' >");
       // A textarea to add a new note body
